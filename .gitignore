@@ -1,3 +1,7 @@
+# Configurations
+.idea/*
+/lib/serverConfigs/*
+
 # Logs
 logs
 *.log

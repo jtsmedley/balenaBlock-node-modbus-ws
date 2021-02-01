@@ -1,0 +1,23 @@
+FROM balenalib/%%BALENA_ARCH%%-node:14 AS build
+
+# Move to app dir
+WORKDIR /usr/src/app
+
+# Move package.json to filesystem
+COPY ./lib/package*.json ./
+
+# This install npm dependencies on the balena build server,
+# making sure to clean up the artifacts it creates in order to reduce the image size.
+RUN JOBS=MAX npm ci --production --unsafe-perm && npm cache verify
+
+FROM balenalib/%%BALENA_ARCH%%-node:14
+COPY --from=build /usr/src/app/node_modules node_modules
+
+# Move app to filesystem
+COPY ./lib ./
+
+# Enable udev for detection of dynamically plugged devices
+ENV UDEV=on
+
+# server.js will run when container starts up on the device
+CMD ["npm", "start"]

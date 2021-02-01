@@ -1,0 +1,20 @@
+version: "1"
+slug: "modbusws"
+name: "modbus-ws"
+type: "sw.application"
+assets:
+  - url: "https://github.com/jtsmedley/balenaBlock-node-modbus-ws"
+    name: "repository"
+  - url: "https://raw.githubusercontent.com/jtsmedley/balenaBlock-node-modbus-ws/main/logo.png"
+    name: "logo"
+data:
+  description: "Socket.io v3 server to communicate with Modbus RTU or TCP"
+  defaultDeviceType: "raspberrypi3"
+  supportedDeviceTypes:
+    - "raspberrypi4-64"
+    - "fincm3"
+    - "raspberrypi3"
+    - "raspberrypi3-64"
+    - "raspberrypi400-64"
+    - "intel-nuc"
+    - "genericx86-64-ext"
