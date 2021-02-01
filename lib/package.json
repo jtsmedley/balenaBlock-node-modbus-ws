@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "modbus-ws": "^2.2.0",
     "pm2": "^4.5.4",
     "require-all": "^3.0.0",
