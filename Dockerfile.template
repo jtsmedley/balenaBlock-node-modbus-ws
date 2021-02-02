@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-node:14 AS build
+FROM balenalib/%%BALENA_MACHINE_NAME%%-node:14-build AS build
 
 # Move to app dir
 WORKDIR /usr/src/app
